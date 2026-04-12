@@ -29,6 +29,7 @@ All notable changes to this project will be documented in this file.
 
 ### Notes (personal)
 - I bumped the default `n_splits` for walk-forward from 5 to 4 in my local config — 5 folds felt too granular on shorter date ranges and produced noisy robustness scores.
+- Changed default `train_ratio` from 0.7 to 0.75 — gives the in-sample window a bit more data on the 1–2 year ranges I typically test, which stabilizes the Sharpe estimates noticeably.
 
 ---
 
@@ -56,9 +57,4 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - `compare_strategies` now fetches OHLCV once and runs all strategies on cached data (5x faster)
-- Yahoo Finance data fetching uses direct connection first, proxy fallback only on failure
-
-## [0.5.0] - 2026-03-29
-
-### Added
-- **Real-Time Market Sentiment (Agent-Reach Integration)**: Integrated
+- Ya
