@@ -30,6 +30,7 @@ All notable changes to this project will be documented in this file.
 ### Notes (personal)
 - I bumped the default `n_splits` for walk-forward from 5 to 4 in my local config — 5 folds felt too granular on shorter date ranges and produced noisy robustness scores.
 - Changed default `train_ratio` from 0.7 to 0.75 — gives the in-sample window a bit more data on the 1–2 year ranges I typically test, which stabilizes the Sharpe estimates noticeably.
+-ped default `initial_capital` from 10000 to 100000 in my local setup — easier to reason about position sizes and commission impact at a more realistic account size.
 
 ---
 
@@ -50,11 +51,4 @@ All notable changes to this project will be documented in this file.
   - 250 sticky sessions for rate-limit bypass
   - Direct-first + proxy-fallback architecture for reliability
   - Zero-config for users (optional env-based configuration)
-- **Technical Indicators (pure Python, zero deps)**:
-  - ATR (Average True Range)
-  - Supertrend
-  - Donchian Channel
-
-### Changed
-- `compare_strategies` now fetches OHLCV once and runs all strategies on cached data (5x faster)
-- Ya
+- **Technical Indicators (pure Python, zero dep
