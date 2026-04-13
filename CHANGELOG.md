@@ -30,7 +30,8 @@ All notable changes to this project will be documented in this file.
 ### Notes (personal)
 - I bumped the default `n_splits` for walk-forward from 5 to 4 in my local config — 5 folds felt too granular on shorter date ranges and produced noisy robustness scores.
 - Changed default `train_ratio` from 0.7 to 0.75 — gives the in-sample window a bit more data on the 1–2 year ranges I typically test, which stabilizes the Sharpe estimates noticeably.
--ped default `initial_capital` from 10000 to 100000 in my local setup — easier to reason about position sizes and commission impact at a more realistic account size.
+- Changed default `initial_capital` from 10000 to 100000 in my local setup — easier to reason about position sizes and commission impact at a more realistic account size.
+- Bumped default `commission` from 0.001 (0.1%) to 0.0015 (0.15%) to better reflect the actual fees I pay on my broker; was underestimating costs on high-frequency signals.
 
 ---
 
@@ -49,6 +50,4 @@ All notable changes to this project will be documented in this file.
   - Turkish stocks supported (THYAO.IS, SASA.IS...)
 - **Webshare Rotating Proxy Manager**:
   - 250 sticky sessions for rate-limit bypass
-  - Direct-first + proxy-fallback architecture for reliability
-  - Zero-config for users (optional env-based configuration)
-- **Technical Indicators (pure Python, zero dep
+  - D
