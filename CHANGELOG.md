@@ -32,6 +32,7 @@ All notable changes to this project will be documented in this file.
 - Changed default `train_ratio` from 0.7 to 0.75 — gives the in-sample window a bit more data on the 1–2 year ranges I typically test, which stabilizes the Sharpe estimates noticeably.
 - Changed default `initial_capital` from 10000 to 100000 in my local setup — easier to reason about position sizes and commission impact at a more realistic account size.
 - Bumped default `commission` from 0.001 (0.1%) to 0.0015 (0.15%) to better reflect the actual fees I pay on my broker; was underestimating costs on high-frequency signals.
+- Changed default `slippage` from 0.001 to 0.0005 — my limit orders typically fill closer to the signal price, so the original default was too conservative for my workflow.
 
 ---
 
@@ -46,8 +47,4 @@ All notable changes to this project will be documented in this file.
   - Single OHLCV fetch for `compare_strategies` (all 6 strategies in ~0.3s)
 - **Yahoo Finance Integration** (`yahoo_price`, `market_snapshot`):
   - Real-time quotes for stocks, crypto, ETFs, indices (S&P500, NASDAQ, VIX), FX
-  - Global market snapshot with 14 instruments across 4 asset classes
-  - Turkish stocks supported (THYAO.IS, SASA.IS...)
-- **Webshare Rotating Proxy Manager**:
-  - 250 sticky sessions for rate-limit bypass
-  - D
+  - Global market snapshot with 14
