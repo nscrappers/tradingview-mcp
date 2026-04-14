@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.
 - Changed default `initial_capital` from 10000 to 100000 in my local setup — easier to reason about position sizes and commission impact at a more realistic account size.
 - Bumped default `commission` from 0.001 (0.1%) to 0.0015 (0.15%) to better reflect the actual fees I pay on my broker; was underestimating costs on high-frequency signals.
 - Changed default `slippage` from 0.001 to 0.0005 — my limit orders typically fill closer to the signal price, so the original default was too conservative for my workflow.
+- Note to self: the robustness score thresholds (0.8/0.5/0.2) feel a bit generous for mean-reversion strategies — considering tightening ROBUST to ≥ 0.9 for those specifically.
 
 ---
 
@@ -45,6 +46,4 @@ All notable changes to this project will be documented in this file.
   - Transaction cost simulation: per-trade commission + slippage
   - Buy-and-hold benchmark comparison
   - Single OHLCV fetch for `compare_strategies` (all 6 strategies in ~0.3s)
-- **Yahoo Finance Integration** (`yahoo_price`, `market_snapshot`):
-  - Real-time quotes for stocks, crypto, ETFs, indices (S&P500, NASDAQ, VIX), FX
-  - Global market snapshot with 14
+- **Yahoo 
