@@ -34,6 +34,7 @@ All notable changes to this project will be documented in this file.
 - Bumped default `commission` from 0.001 (0.1%) to 0.0015 (0.15%) to better reflect the actual fees I pay on my broker; was underestimating costs on high-frequency signals.
 - Changed default `slippage` from 0.001 to 0.0005 — my limit orders typically fill closer to the signal price, so the original default was too conservative for my workflow.
 - Note to self: the robustness score thresholds (0.8/0.5/0.2) feel a bit generous for mean-reversion strategies — considering tightening ROBUST to ≥ 0.9 for those specifically.
+- Reconsidering the 252 × 6 annualization factor for 1h bars — in practice I see closer to 6.5 trading hours on US markets, so 252 × 6.5 = 1638 might be more accurate. Will test and update if Sharpe values look off.
 
 ---
 
@@ -43,7 +44,4 @@ All notable changes to this project will be documented in this file.
 - **Backtesting Engine v2** (`backtest_strategy`, `compare_strategies`):
   - 6 trading strategies: RSI, Bollinger Band, MACD, EMA Cross, **Supertrend** (🔥 trending 2025), **Donchian Channel** (Turtle Trader classic)
   - Institutional-grade metrics: Sharpe Ratio, Calmar Ratio, Expectancy, Profit Factor, Max Drawdown
-  - Transaction cost simulation: per-trade commission + slippage
-  - Buy-and-hold benchmark comparison
-  - Single OHLCV fetch for `compare_strategies` (all 6 strategies in ~0.3s)
-- **Yahoo 
+  - Transact
